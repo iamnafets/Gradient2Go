@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/gradient2go
+hooks:
+  BeforeInstall:
+    - location: scripts/setupEnvironment.sh
+      timeout: 15
+      runas: root
+  ApplicationStart:
+    - location: scripts/activate.sh
+      timeout: 900
+      runas: gradient2go
+  ApplicationStop:
+    - location: scripts/deactivate.sh
+      timeout: 300
+      runas: gradient2go
