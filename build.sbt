@@ -6,9 +6,10 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.1"
 
+EclipseKeys.withSource := true
+
 libraryDependencies ++= Seq(
-  jdbc,
-  anorm,
   cache,
-  ws
+  ws,
+  "com.github.seratch" %% "awscala" % "0.3.+"
 )

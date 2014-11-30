@@ -44,3 +44,4 @@ logs/
 bin/
 project/activator-sbt-eclipse-shim.sbt
 project/activator-sbt-idea-shim.sbt
+/bin
