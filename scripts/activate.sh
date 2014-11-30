@@ -1,8 +1,11 @@
 #!/bin/bash
 
+set -e
+
 (
 cd /home/gradient2go
-./activator start 2> var/error > var/log &
+./activator clean compile stage 2>&1 var/compile > var/compile
+target/universal/stage/bin/gradient2go
 PID=$!
 echo $PID > var/pid
 )

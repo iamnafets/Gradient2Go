@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 (
 cd /home/gradient2go
 echo "Killing softly..." >> var/deactivate
