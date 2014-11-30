@@ -6,7 +6,6 @@ import play.api.libs.ws.WS
 import play.api.libs.concurrent.Execution.Implicits._
 import jobs._
 import akka.actor._
-import java.util.function.{ Function ⇒ JFunction, Predicate ⇒ JPredicate, BiPredicate }
 
 object Global extends GlobalSettings {
 
