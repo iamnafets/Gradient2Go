@@ -3,6 +3,11 @@ os: linux
 files:
   - source: /
     destination: /home/gradient2go
+permissions:
+   - object: /home/gradient2go
+     pattern: "**"
+     owner: gradient2go
+     group: gradient2go
 hooks:
   BeforeInstall:
     - location: scripts/setupEnvironment.sh
