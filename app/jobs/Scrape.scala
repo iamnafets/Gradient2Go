@@ -18,8 +18,6 @@ object Scrape {
   // of time debugging.
   System.setProperty("jdk.tls.client.protocols", "TLSv1")
 
-  implicit val s3: S3 = S3.at(Region.Oregon)
-
   val landingDirectory = Files.createTempDirectory("scrape2go_landing")
   Logger.info("Writing to " + landingDirectory.toString)
 
@@ -59,6 +57,7 @@ object Scrape {
 
   def pushToS3 = {
     try {
+      implicit val s3 = S3.at(Region.Oregon)
       Cities map { city =>
         s3.bucket("scrape2go") map { bucket =>
           val activeFiles = landingDirectory.toFile.listFiles.filter(_.getName.startsWith("written_" + city))
